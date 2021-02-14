@@ -29,29 +29,38 @@ public class lineOfCompare
                	System.out.println("Distance Between Line is:-"+lengthOfLine);
 	}
 
-	public  void equalLine()
+	public  void compareLines()
 	{
 		System.out.println("-------------------------------------------------Line 1---------------------------------------------------");
 		comparisonOfLine();
 		line1=lengthOfLine;
+		Integer length1 = (int) lengthOfLine;
 
 		System.out.println("-------------------------------------------------Line 2---------------------------------------------------");
                 comparisonOfLine();
                 line2=lengthOfLine;
 
-		if(line1 == line2)
+		Integer length2 = (int) lengthOfLine;
+
+		int compare = length1.compareTo(length2);
+
+		if(length1 > length2)
 		{
-			 System.out.println("Lines Are Equal");
+			 System.out.println("Line 1 is Greater");
+		}
+		else if(length1 < length2)
+		{
+			 System.out.println("Line 2 is Greater");
 		}
 		else
 		{
-			 System.out.println("Lines Are Not Equal");
+			 System.out.println("Both are Equals");
 		}
 	}
 	public static void main(String args[])
 	{
 		lineOfCompare line = new lineOfCompare();
 
-		line.equalLine();
+		line.compareLines();
 	}
 }
