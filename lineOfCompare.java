@@ -4,6 +4,7 @@ public class lineOfCompare
 {
 	public int x1,x2,y1,y2;
 	public double lengthOfLine;
+	public double line1,line2;
 	public double lengthCalculation()
 	{
 		Scanner sc = new Scanner(System.in);
@@ -17,7 +18,7 @@ public class lineOfCompare
 
 		return lengthOfLine;
 	}
-	public void comparison_Of_Line()
+	public void comparisonOfLine()
 	{
 		lengthCalculation();
 
@@ -27,10 +28,30 @@ public class lineOfCompare
 		System.out.println("***********************************************************");
                	System.out.println("Distance Between Line is:-"+lengthOfLine);
 	}
+
+	public  void equalLine()
+	{
+		System.out.println("-------------------------------------------------Line 1---------------------------------------------------");
+		comparisonOfLine();
+		line1=lengthOfLine;
+
+		System.out.println("-------------------------------------------------Line 2---------------------------------------------------");
+                comparisonOfLine();
+                line2=lengthOfLine;
+
+		if(line1 == line2)
+		{
+			 System.out.println("Lines Are Equal");
+		}
+		else
+		{
+			 System.out.println("Lines Are Not Equal");
+		}
+	}
 	public static void main(String args[])
 	{
 		lineOfCompare line = new lineOfCompare();
 
-		line.comparison_Of_Line();
+		line.equalLine();
 	}
 }
